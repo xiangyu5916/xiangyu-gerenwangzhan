@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI.VISUAL - 个人主页</title>
+  
+  <!-- 引入 Tailwind CSS (CDN 方式直接渲染样式) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- 配置自定义动画和 Tailwind 主题 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- 补充自定义动画样式 -->
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-[#050505] text-neutral-300 font-sans selection:bg-cyan-500/30">
+
+  <!-- 顶部导航栏 (Glassmorphism) -->
+  <nav class="fixed top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5 transition-all">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="text-xl font-bold tracking-wider text-white flex items-center gap-2">
+        <i data-lucide="zap" class="w-5 h-5 text-cyan-400"></i>
+        <span>AI.VISUAL</span>
+      </div>
+      <div class="hidden md:flex space-x-8 text-sm font-medium" id="nav-links">
+        <a href="#profile" class="nav-link text-cyan-400 transition-colors duration-300 flex items-center gap-1.5 hover:text-white" data-target="profile">个人概况</a>
+        <a href="#work" class="nav-link text-neutral-500 transition-colors duration-300 flex items-center gap-1.5 hover:text-white" data-target="work">工作经历</a>
+        <a href="#internship" class="nav-link text-neutral-500 transition-colors duration-300 flex items-center gap-1.5 hover:text-white" data-target="internship">实习经历</a>
+        <a href="#projects" class="nav-link text-neutral-500 transition-colors duration-300 flex items-center gap-1.5 hover:text-white" data-target="projects">项目经历</a>
+        <a href="#skills" class="nav-link text-neutral-500 transition-colors duration-300 flex items-center gap-1.5 hover:text-white" data-target="skills">专业技能</a>
+        <a href="#awards" class="nav-link text-neutral-500 transition-colors duration-300 flex items-center gap-1.5 hover:text-white" data-target="awards">获奖作品</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-6 pt-32 pb-24 space-y-32">
+    
+    <!-- 1. 个人概况 (Profile) -->
+    <section id="profile" class="scroll-mt-32 animate-fade-in-up section-block">
+      <div class="space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono tracking-widest uppercase mb-4">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          Profile
+        </div>
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white tracking-tight">
+          AI 影像创作者 <br />
+          <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            & 商业视觉设计师
+          </span>
+        </h1>
+        <p class="text-lg leading-relaxed text-neutral-400 max-w-3xl mt-6 border-l-2 border-cyan-500/50 pl-6">
+          聚焦AI影像创作与商业视觉设计领域，具备扎实的AI工具应用能力、商业项目执行经验及新媒体运营能力。擅长运用各类AI绘画、视频工具落地商业影像需求，精通ComfyUI工作流搭建与模型训练，同时具备敏锐的行业洞察力和高效的项目交付能力，致力于通过AI技术优化视觉创作流程、降低制作成本。
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. 工作经历 (Work Experience) -->
+    <section id="work" class="scroll-mt-32 section-block">
+      <!-- Section Header -->
+      <div class="flex items-center gap-3 mb-10">
+        <div class="p-2 bg-neutral-900 rounded-lg border border-neutral-800 text-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.1)]">
+          <i data-lucide="briefcase"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-white tracking-wide">工作经历</h2>
+        <div class="h-px bg-gradient-to-r from-neutral-800 to-transparent flex-grow ml-4"></div>
+      </div>
+      
+      <div class="relative border-l border-neutral-800 ml-3 md:ml-4 space-y-12">
+        <div class="relative pl-8 md:pl-10">
+          <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-[#050505] border-2 border-cyan-400 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.5)]"></div>
+          <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+            <h3 class="text-xl font-bold text-white">宁波艾优控股有限公司</h3>
+            <span class="text-sm font-mono text-cyan-400 mt-1 md:mt-0">2025.04 - 至今</span>
+          </div>
+          <h4 class="text-md text-neutral-300 font-medium mb-4 flex items-center gap-2">
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-500"></i>
+            AI影像分镜师
+          </h4>
+          <ul class="space-y-3 text-neutral-400 text-sm leading-relaxed">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-neutral-600 mt-2 shrink-0"></span>
+              <span>负责 GERM 品牌影像部的视觉方案与分镜设计，高效产出符合商业水准的平面素材与视频脚本，大幅缩减传统实拍成本。</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-neutral-600 mt-2 shrink-0"></span>
+              <span><strong class="text-neutral-200">IP 孵化与技术统筹：</strong>主导公司虚拟 IP “G-Muse”的技术选型与内容产出路径，通过 AI 视频生成模型降低高品质动态短视频的制作门槛与成本。</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 实习经历 (Internship Experience) -->
+    <section id="internship" class="scroll-mt-32 section-block">
+      <!-- Section Header -->
+      <div class="flex items-center gap-3 mb-10">
+        <div class="p-2 bg-neutral-900 rounded-lg border border-neutral-800 text-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.1)]">
+          <i data-lucide="book-open"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-white tracking-wide">实习经历</h2>
+        <div class="h-px bg-gradient-to-r from-neutral-800 to-transparent flex-grow ml-4"></div>
+      </div>
+
+      <div class="relative border-l border-neutral-800 ml-3 md:ml-4 space-y-12">
+        <!-- 阿里 -->
+        <div class="relative pl-8 md:pl-10">
+          <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-neutral-800 border-2 border-neutral-500 rounded-full transition-colors hover:border-cyan-400"></div>
+          <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+            <h3 class="text-xl font-bold text-white">阿里巴巴</h3>
+            <span class="text-sm font-mono text-neutral-500 mt-1 md:mt-0">2024.09 - 2025.03</span>
+          </div>
+          <h4 class="text-md text-neutral-300 font-medium mb-4 flex items-center gap-2">
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-500"></i>
+            AI产品运营
+          </h4>
+          <ul class="space-y-3 text-neutral-400 text-sm leading-relaxed">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-neutral-600 mt-2 shrink-0"></span>
+              <span><strong class="text-neutral-200">产品运营：</strong>跟进堆友AI平台三大核心模块（ComfyUI工作流/灵感库/视频生成）的上线全流程，负责产品上线前的竞品调研、需求文档撰写及效果评估，协助团队完善产品功能。</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-neutral-600 mt-2 shrink-0"></span>
+              <span><strong class="text-neutral-200">热点挖掘：</strong>作为热点小组成员提前预测未来1-2月中文旅、设计等行业的潜在热点趋势。成功预测“非遗剪纸建筑”效果趋势，助力堆友在新年期间实现营收增长15%。</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-neutral-600 mt-2 shrink-0"></span>
+              <span><strong class="text-neutral-200">账号运营：</strong>独立负责“堆友AI”官方小红书账号的全链路运营，输出25+篇高质量笔记，累计涨粉5000+。</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-neutral-600 mt-2 shrink-0"></span>
+              <span><strong class="text-neutral-200">KOL推广：</strong>起草合作brief，通过多渠道与80+KOL达成合作，最终实现“堆友AI”话题累计曝光量500w+。</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 必有回响 -->
+        <div class="relative pl-8 md:pl-10">
+          <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-neutral-800 border-2 border-neutral-500 rounded-full transition-colors hover:border-cyan-400"></div>
+          <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+            <h3 class="text-xl font-bold text-white">上海必有回响科技有限公司</h3>
+            <span class="text-sm font-mono text-neutral-500 mt-1 md:mt-0">2024.04 - 2024.08</span>
+          </div>
+          <h4 class="text-md text-neutral-300 font-medium mb-4 flex items-center gap-2">
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-500"></i>
+            AI社区运营 (吐司AI)
+          </h4>
+          <ul class="space-y-3 text-neutral-400 text-sm leading-relaxed">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-neutral-600 mt-2 shrink-0"></span>
+              <span><strong class="text-neutral-200">ComfyUI工作流搭建：</strong>结合用户使用场景，储备并优化官方工作流30+，覆盖从基础操作到复杂创意，累计工作流使用量突破1万次。</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-neutral-600 mt-2 shrink-0"></span>
+              <span><strong class="text-neutral-200">活动策划：</strong>策划并执行6场线上活动，最高覆盖2000+用户。与国内知名AI社群（如 WaytoAGI、AIGC×China）达成建联与合作，扩大品牌影响力。</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-neutral-600 mt-2 shrink-0"></span>
+              <span><strong class="text-neutral-200">社区运营：</strong>负责社区用户的日常运营，活动参与率提升20%；积极维护核心创作者群体，增强创作者粘性。</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 项目经历 (Project Experience) -->
+    <section id="projects" class="scroll-mt-32 section-block">
+      <!-- Section Header -->
+      <div class="flex items-center gap-3 mb-10">
+        <div class="p-2 bg-neutral-900 rounded-lg border border-neutral-800 text-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.1)]">
+          <i data-lucide="layers"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-white tracking-wide">项目经历</h2>
+        <div class="h-px bg-gradient-to-r from-neutral-800 to-transparent flex-grow ml-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- 元宵AI短片 -->
+        <div class="md:col-span-2 group bg-neutral-900/20 border border-neutral-800 hover:border-cyan-500/30 p-6 rounded-2xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.05)]">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">元宵AI短片</h3>
+              <p class="text-xs font-mono text-cyan-500/70 mt-1">全链路 AIGC 概念短片</p>
+            </div>
+            <i data-lucide="external-link" class="w-4 h-4 text-neutral-600 group-hover:text-cyan-400 transition-colors"></i>
+          </div>
+          <div class="space-y-5 text-sm text-neutral-400">
+            <div class="space-y-2">
+              <p><strong class="text-neutral-300">前期：</strong>运用 Gemini 高效完成剧本架构与精细化的分镜 Prompt 策划。</p>
+              <p><strong class="text-neutral-300">中期：</strong>采用 Nano Banana Pro 确立核心美术基调与高精度分镜图片；调度 Seedance 2.0 与 可灵 AI 攻克复杂动态生成难题。</p>
+              <p><strong class="text-neutral-300">后期：</strong>通过后期软件进行视听语言包装与剪辑成片，实现从文本到影像的完美跨越。</p>
+            </div>
+            
+            <div class="mt-6 space-y-4">
+              <!-- 主视频 -->
+              <div class="rounded-xl overflow-hidden border border-neutral-800 bg-black/60 shadow-lg">
+                <video 
+                  src="https://xiangyu.tos-cn-beijing.volces.com/%E5%85%83%E5%AE%B5/%E5%BD%93%E4%BC%A0%E7%BB%9F%E8%8A%82%E6%97%A5%E9%81%87%E8%A7%81%E6%9C%AA%E6%9D%A5%E8%A1%A8%E8%BE%BE%EF%BC%8C%E6%A0%BC%E7%B1%B3%E5%93%81%E7%89%8C%E6%95%B0%E5%AD%97%E4%BA%BAG-Muse%E9%99%AA%E4%BD%A0%E5%85%B1%E5%BA%A6%E5%85%83%E5%AE%B5%E3%80%82%20%E7%81%AF%E7%81%AB%E6%B8%A9%E6%9A%96%EF%BC%8C%E6%9C%AA%E6%9D%A5%E5%B7%B2%E6%9D%A5%EF%BC%8C%E6%A0%BC%E7%B1%B3%E7%82%B9%E4%BA%AE%E5%9B%A2%E5%9C%86%E6%97%B6%E5%88%BB%EF%BC%81%23GERM%E8%AE%A9%E6%AF%8F%E5%88%BB%E6%9B%B4%E5%87%BA%E8%89%B2%23%E5%85%83%E5%AE%B5%E8%8A%82_xWT111.mp4" 
+                  controls
+                  playsinline
+                  class="w-full h-auto object-contain max-h-[60vh] hover:opacity-95 transition-opacity" 
+                ></video>
+              </div>
+              
+              <!-- 4张图片网格 -->
+              <div class="grid grid-cols-2 gap-4">
+                <div class="overflow-hidden rounded-lg border border-neutral-800 hover:border-cyan-500/50 transition-all duration-300 group/img">
+                  <img src="https://xiangyu.tos-cn-beijing.volces.com/%E5%85%83%E5%AE%B5/%E5%85%83%E5%AE%B51.png" alt="元宵短片展示 1" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" />
+                </div>
+                <div class="overflow-hidden rounded-lg border border-neutral-800 hover:border-cyan-500/50 transition-all duration-300 group/img">
+                  <img src="https://xiangyu.tos-cn-beijing.volces.com/%E5%85%83%E5%AE%B5/%E5%85%83%E5%AE%B52.png" alt="元宵短片展示 2" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" />
+                </div>
+                <div class="overflow-hidden rounded-lg border border-neutral-800 hover:border-cyan-500/50 transition-all duration-300 group/img">
+                  <img src="https://xiangyu.tos-cn-beijing.volces.com/%E5%85%83%E5%AE%B5/%E5%85%83%E5%AE%B53.png" alt="元宵短片展示 3" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" />
+                </div>
+                <div class="overflow-hidden rounded-lg border border-neutral-800 hover:border-cyan-500/50 transition-all duration-300 group/img">
+                  <img src="https://xiangyu.tos-cn-beijing.volces.com/%E5%85%83%E5%AE%B5/%E5%85%83%E5%AE%B54.png" alt="元宵短片展示 4" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 北高峰财神庙联名 -->
+        <div class="md:col-span-2 group bg-neutral-900/20 border border-neutral-800 hover:border-cyan-500/30 p-6 rounded-2xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.05)]">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">北高峰财神庙联名</h3>
+              <p class="text-xs font-mono text-cyan-500/70 mt-1">商业营销影像</p>
+            </div>
+            <i data-lucide="external-link" class="w-4 h-4 text-neutral-600 group-hover:text-cyan-400 transition-colors"></i>
+          </div>
+          <div class="space-y-5 text-sm text-neutral-400">
+            <div class="space-y-2">
+              <p>AI结合实拍场景画面以及固有IP角色，完美实现“品牌 IP 角色 + AI 虚拟大场景”的无缝融合，生成创意画面。</p>
+              <p>结合固有“财神” IP 角色与全 AI 生成场景，打造“零实拍”的纯虚拟商业影片，以极低成本高效交付具备完整动态叙事与极高视觉冲击力的商业影像。</p>
+            </div>
+            
+            <div class="mt-6 space-y-4">
+              <!-- 主视频 -->
+              <div class="rounded-xl overflow-hidden border border-neutral-800 bg-black/60 shadow-lg">
+                <video 
+                  src="https://xiangyu.tos-cn-beijing.volces.com/%E8%B4%A2%E7%A5%9E%E5%BA%99/%E8%B4%A2%E7%A5%9E%E5%BA%99%E8%A7%86%E9%A2%91.mp4" 
+                  controls
+                  playsinline
+                  class="w-full h-auto object-contain max-h-[60vh] hover:opacity-95 transition-opacity" 
+                ></video>
+              </div>
+              
+              <!-- 4张图片网格 -->
+              <div class="grid grid-cols-2 gap-4">
+                <div class="overflow-hidden rounded-lg border border-neutral-800 hover:border-cyan-500/50 transition-all duration-300 group/img">
+                  <img src="https://xiangyu.tos-cn-beijing.volces.com/%E8%B4%A2%E7%A5%9E%E5%BA%99/%E8%B4%A2%E7%A5%9E1.png" alt="财神庙联名展示 1" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" />
+                </div>
+                <div class="overflow-hidden rounded-lg border border-neutral-800 hover:border-cyan-500/50 transition-all duration-300 group/img">
+                  <img src="https://xiangyu.tos-cn-beijing.volces.com/%E8%B4%A2%E7%A5%9E%E5%BA%99/%E8%B4%A2%E7%A5%9E2.png" alt="财神庙联名展示 2" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" />
+                </div>
+                <div class="overflow-hidden rounded-lg border border-neutral-800 hover:border-cyan-500/50 transition-all duration-300 group/img">
+                  <img src="https://xiangyu.tos-cn-beijing.volces.com/%E8%B4%A2%E7%A5%9E%E5%BA%99/%E8%B4%A2%E7%A5%9E3.jpeg" alt="财神庙联名展示 3" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" />
+                </div>
+                <div class="overflow-hidden rounded-lg border border-neutral-800 hover:border-cyan-500/50 transition-all duration-300 group/img">
+                  <img src="https://xiangyu.tos-cn-beijing.volces.com/%E8%B4%A2%E7%A5%9E%E5%BA%99/%E8%B4%A2%E7%A5%9E4.png" alt="财神庙联名展示 4" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 艺术家朱敬一联名 -->
+        <div class="md:col-span-2 group bg-neutral-900/20 border border-neutral-800 hover:border-cyan-500/30 p-6 rounded-2xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.05)]">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">艺术家朱敬一联名</h3>
+              <p class="text-xs font-mono text-cyan-500/70 mt-1">虚实结合影像创作</p>
+            </div>
+            <i data-lucide="external-link" class="w-4 h-4 text-neutral-600 group-hover:text-cyan-400 transition-colors"></i>
+          </div>
+          <div class="space-y-2 text-sm text-neutral-400 max-w-2xl">
+            <p>探索 AI 技术与传统艺术形式的边界，将 AI 生成的视觉奇观与实拍画面深度融合，打造极具艺术张力与商业价值的联名视觉作品。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. 专业技能 (Professional Skills) -->
+    <section id="skills" class="scroll-mt-32 section-block">
+      <!-- Section Header -->
+      <div class="flex items-center gap-3 mb-10">
+        <div class="p-2 bg-neutral-900 rounded-lg border border-neutral-800 text-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.1)]">
+          <i data-lucide="cpu"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-white tracking-wide">专业技能</h2>
+        <div class="h-px bg-gradient-to-r from-neutral-800 to-transparent flex-grow ml-4"></div>
+      </div>
+
+      <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-8 backdrop-blur-sm space-y-8">
+        
+        <div>
+          <h4 class="text-white font-medium mb-4 flex items-center gap-2">
+            <!-- Terminal Icon SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-500"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+            AI 工具栈
+          </h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-[#111] border border-neutral-800 rounded-md text-sm text-neutral-300 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default">ComfyUI</span>
+            <span class="px-3 py-1.5 bg-[#111] border border-neutral-800 rounded-md text-sm text-neutral-300 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default">Lovart</span>
+            <span class="px-3 py-1.5 bg-[#111] border border-neutral-800 rounded-md text-sm text-neutral-300 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default">即梦</span>
+            <span class="px-3 py-1.5 bg-[#111] border border-neutral-800 rounded-md text-sm text-neutral-300 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default">可灵AI</span>
+            <span class="px-3 py-1.5 bg-[#111] border border-neutral-800 rounded-md text-sm text-neutral-300 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default">Seedace 2.0</span>
+            <span class="px-3 py-1.5 bg-[#111] border border-neutral-800 rounded-md text-sm text-neutral-300 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default">Openclaw</span>
+            <span class="px-3 py-1.5 bg-[#111] border border-neutral-800 rounded-md text-sm text-neutral-300 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default">Midjourney</span>
+            <span class="px-3 py-1.5 bg-[#111] border border-neutral-800 rounded-md text-sm text-neutral-300 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default">Stable Diffusion</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-medium mb-4 flex items-center gap-2">
+            <!-- Network Icon SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-500"><rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path><path d="M12 12V8"></path></svg>
+            商业级工作流与模型
+          </h4>
+          <p class="text-sm text-neutral-400 leading-relaxed mb-3">
+            熟练掌握 ComfyUI 商业级工作流搭建及定制化模型训练。在主流AI社区（LibLibAI/Runninghub）贡献开源成果。
+          </p>
+          <div class="flex gap-6 mt-2 mb-6">
+            <div class="flex flex-col">
+              <span class="text-xl font-bold text-white">3万+</span>
+              <span class="text-xs text-neutral-500">工作流使用次数</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xl font-bold text-white">100万+</span>
+              <span class="text-xs text-neutral-500">技术教程全网曝光</span>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <img src="https://xiangyu.tos-cn-beijing.volces.com/lib.png" alt="LibLibAI 主页数据" class="w-full h-auto rounded-xl border border-neutral-800 shadow-lg hover:border-cyan-500/50 transition-colors object-cover" />
+            <img src="https://xiangyu.tos-cn-beijing.volces.com/rh.png" alt="Runninghub 主页数据" class="w-full h-auto rounded-xl border border-neutral-800 shadow-lg hover:border-cyan-500/50 transition-colors object-cover" />
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-medium mb-4 flex items-center gap-2">
+            <!-- TrendingUp Icon SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-500"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+            IP矩阵与自媒体运营
+          </h4>
+          <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+            独立运营全网垂直账号 <strong class="text-cyan-400 font-medium">“向鱼AIGC”</strong>，凭借对各类AI工具的精通及敏锐的热点洞察力，实现规模化传播，沉淀了庞大的高粘性粉丝群体。
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <img src="https://xiangyu.tos-cn-beijing.volces.com/%E7%A4%BE%E5%AA%92/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260313221947_635_30.jpg" alt="社媒数据展示 1" class="w-full h-auto rounded-xl border border-neutral-800 shadow-lg hover:border-cyan-500/50 transition-colors object-cover" />
+            <img src="https://xiangyu.tos-cn-beijing.volces.com/%E7%A4%BE%E5%AA%92/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260313222005_636_30.jpg" alt="社媒数据展示 2" class="w-full h-auto rounded-xl border border-neutral-800 shadow-lg hover:border-cyan-500/50 transition-colors object-cover" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. 获奖作品 (Award-Winning Works) -->
+    <section id="awards" class="scroll-mt-32 pb-20 section-block">
+      <!-- Section Header -->
+      <div class="flex items-center gap-3 mb-10">
+        <div class="p-2 bg-neutral-900 rounded-lg border border-neutral-800 text-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.1)]">
+          <i data-lucide="award"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-white tracking-wide">获奖作品</h2>
+        <div class="h-px bg-gradient-to-r from-neutral-800 to-transparent flex-grow ml-4"></div>
+      </div>
+      
+      <p class="text-neutral-500 text-sm mb-6">代表性参赛获奖影像作品展示</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- 获奖作品 1 -->
+        <div class="md:col-span-2 space-y-3">
+          <div class="flex items-center gap-2 mb-1">
+            <i data-lucide="award" class="w-5 h-5 text-yellow-500"></i>
+            <h3 class="text-xl font-bold text-white">可灵大赛二等奖</h3>
+          </div>
+          <div class="rounded-xl overflow-hidden border border-neutral-800 bg-black/60 shadow-lg">
+            <video 
+              src="https://xiangyu.tos-cn-beijing.volces.com/%E8%8E%B7%E5%A5%96%E4%BD%9C%E5%93%81/%E5%8F%AF%E7%81%B5%E5%A4%A7%E8%B5%9B.mp4" 
+              controls
+              playsinline
+              class="w-full h-auto object-contain max-h-[60vh]" 
+            ></video>
+          </div>
+        </div>
+        
+        <!-- 获奖作品 2 -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 mb-1">
+            <i data-lucide="award" class="w-4 h-4 text-cyan-400"></i>
+            <h3 class="text-lg font-bold text-white">上海嘉定提示未来AI视频比赛第五名</h3>
+          </div>
+          <div class="rounded-xl overflow-hidden border border-neutral-800 bg-black/60 shadow-lg h-full flex items-center">
+            <video 
+              src="https://xiangyu.tos-cn-beijing.volces.com/%E8%8E%B7%E5%A5%96%E4%BD%9C%E5%93%81/%E5%98%89%E5%AE%9A.mp4" 
+              controls
+              playsinline
+              class="w-full h-auto object-contain max-h-[40vh]" 
+            ></video>
+          </div>
+        </div>
+
+        <!-- 获奖作品 3 -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 mb-1">
+            <i data-lucide="award" class="w-4 h-4 text-cyan-400"></i>
+            <h3 class="text-lg font-bold text-white">联想AI PC高校创新大赛第五名</h3>
+          </div>
+          <div class="rounded-xl overflow-hidden border border-neutral-800 bg-black/60 shadow-lg h-full flex items-center">
+            <video 
+              src="https://xiangyu.tos-cn-beijing.volces.com/%E8%8E%B7%E5%A5%96%E4%BD%9C%E5%93%81/%E8%81%94%E6%83%B3AI%20PC%E9%AB%98%E6%A0%A1%E5%88%9B%E6%96%B0%E5%A4%A7%E8%B5%9B.mp4" 
+              controls
+              playsinline
+              class="w-full h-auto object-contain max-h-[40vh]" 
+            ></video>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-8 text-center text-neutral-600 text-sm">
+    <p>© 2024 AI.VISUAL Portfolio. All rights reserved.</p>
+  </footer>
+
+  <!-- 引入 Lucide 图标库处理脚本 -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    // 初始化图标
+    lucide.createIcons();
+
+    // 平滑滚动监听，用于更新导航栏高亮
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll('.section-block');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      window.addEventListener('scroll', () => {
+        let current = 'profile';
+        const scrollPosition = window.scrollY + 100;
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('text-cyan-400');
+          link.classList.add('text-neutral-500');
+          if (link.dataset.target === current) {
+            link.classList.remove('text-neutral-500');
+            link.classList.add('text-cyan-400');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
